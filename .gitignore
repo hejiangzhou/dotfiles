@@ -1,2 +1,3 @@
-*.local
-local.d
+*/*.local
+*/local
+*/mods.enabled

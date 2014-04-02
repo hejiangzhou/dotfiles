@@ -1,4 +1,8 @@
-Plugin 'Valloric/YouCompleteMe'
+if g:at_google
+    Glug youcompleteme-google
+else
+    Plugin 'Valloric/YouCompleteMe'
+endif
 
 nnoremap <C-y>g :YcmCompleter GoTo<CR>
 nnoremap <C-y>d :YcmCompleter GoToDeclaration<CR>
