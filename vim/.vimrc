@@ -65,6 +65,6 @@ for f in split(glob('~/dotfiles/vim/mods.enabled/*.vim'), '\n')
     exe 'source' f
 endfor
 
-if filereadable(expand('~/dotfiles/.vimrc.local'))
-    source ~/dotfiles/.vimrc.local
+if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
+    source ~/dotfiles/vim/.vimrc.local
 endif
