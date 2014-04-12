@@ -1,4 +1,5 @@
 LOCAL_DIR=$(dirname "$PWD/$0")
+DOTFILES_DIR=$HOME/dotfiles
 
 safe_symlink()
 {
@@ -17,3 +18,7 @@ safe_symlink()
     fi
 }
 
+mod_enable()
+{
+    $DOTFILES_DIR/mod-enable $1/mods.available/$2
+}

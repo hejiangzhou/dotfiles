@@ -77,6 +77,7 @@ unset color_prompt force_color_prompt
 
 export PATH=~/dotfiles/tools/local:~/dotfiles/tools:~/dotfiles/env/local:~/dotfiles/env:/usr/local/bin:$PATH
 export EDITOR="vim"
+export GITHUB_USERNAME="hejiangzhou"
 
 if [ $OS_TYPE == "Darwin" ]; then
     alias ls="ls -G"
@@ -113,6 +114,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+local_directory=$PWD
+
 if [ -d ~/dotfiles/sh/mods.enabled ]; then
     cd ~/dotfiles/sh/mods.enabled
     for X in *; do
@@ -125,4 +128,5 @@ if [ -e ~/dotfiles/sh/.bashrc.local ]; then
     . .bashrc.local
 fi
 
-cd ~
+cd "$local_directory"
+unset local_directory
