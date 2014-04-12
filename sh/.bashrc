@@ -97,7 +97,7 @@ alias ..='cd ..'
 alias ...='cd ...'
 alias ....='cd ....'
 alias x='chmod +x'
-alias init='source ~/.bashrc'
+alias init='. ~/.bashrc'
 alias emacs="emacs -nw"
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -113,6 +113,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -e ~/dotfiles/sh/.bashrc.local ]; then
-    source ~/dotfiles/sh/.bashrc.local
+if [ -d ~/dotfiles/sh/mods.enabled ]; then
+    cd ~/dotfiles/sh/mods.enabled
+    for X in *; do
+        . $X
+    done
 fi
+
+if [ -e ~/dotfiles/sh/.bashrc.local ]; then
+    cd ~/dotfiles/sh
+    . .bashrc.local
+fi
+
+cd ~
