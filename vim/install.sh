@@ -8,3 +8,4 @@ if ! [ -d ~/.vim/bundle/vundle ]; then
 fi
 
 safe_symlink $LOCAL_DIR/.vimrc ~/.vimrc
+safe_symlink $LOCAL_DIR/ftplugin ~/.vim/ftplugin
