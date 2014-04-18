@@ -1,0 +1,5 @@
+#!/bin/bash
+source $(dirname $0)/../install-lib.sh
+
+mod_enable vim ycm.vim
+safe_symlink "$DOTFILES_DIR/vim/.ycm_extra_conf.py" ~/.ycm_extra_conf.py

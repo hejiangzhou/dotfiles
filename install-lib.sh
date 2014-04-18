@@ -1,5 +1,5 @@
-LOCAL_DIR=$(dirname "$PWD/$0")
-DOTFILES_DIR=$HOME/dotfiles
+LOCAL_DIR=$(cd "$(dirname $0)" && pwd)
+DOTFILES_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 safe_symlink()
 {
