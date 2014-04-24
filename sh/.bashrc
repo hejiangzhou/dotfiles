@@ -100,7 +100,6 @@ alias ....='cd ....'
 alias x='chmod +x'
 alias init='. ~/.bashrc'
 alias emacs="emacs -nw"
-alias xclipb='xclip -selection clipboard'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
