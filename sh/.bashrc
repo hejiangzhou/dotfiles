@@ -10,14 +10,6 @@ show-git-branch()
     return $RET
 }
 
-git() {
-  if [[ "$1" == 'merge' ]]; then
-    echo 'Use git5 merge, not git merge. git merge does not understand how to merge the READONLY link and it can corrupt your branch, so stay away from it. type "unset -f git" to remove this warning';
-  else
-    command git "$@";
-  fi;
-}
-
 export OS_TYPE=$(uname -s | sed 's/^\([[:alnum:]]*\)\(.*\)/\1/')
 
 # don't put duplicate lines or lines starting with space in the history.
