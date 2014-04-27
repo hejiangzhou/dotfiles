@@ -179,7 +179,7 @@ set expandtab
 " Autocommands: Auto Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
-autocmd Filetype c,cc,cpp,cxx,h,C,py,sh,f,f90,go
+autocmd Filetype c,cc,cpp,cxx,h,C,py,sh,f,f90,go,md
 \ set foldenable |
 \ set foldmethod=syntax |
 \ set textwidth=80 |
