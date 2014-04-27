@@ -179,10 +179,10 @@ set expandtab
 " Autocommands: Auto Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
-autocmd Filetype c,cc,cpp,cxx,h,C,py,sh,f,f90
+autocmd Filetype c,cc,cpp,cxx,h,C,py,sh,f,f90,go
 \ set foldenable |
 \ set foldmethod=syntax |
-\ set textwidth=78 |
+\ set textwidth=80 |
 \ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>
 " 设置taglist 窗口，方便理解程序结构哦~
 autocmd Filetype c,cc,cpp,cxx,h,py,sh,f,f90 map <silent> <F9> :TlistToggle<cr>
