@@ -1,0 +1,3 @@
+[submodule "lib/easyycm"]
+	path = lib/easyycm
+	url = git@github.com:hejiangzhou/EasyYCM.git

@@ -1,4 +1,4 @@
-. shlib-deps
+. shlib-easyycm
 
 CXX=$NDK_DEFAULT_TOOLCHAIN/g++
 

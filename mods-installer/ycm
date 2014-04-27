@@ -2,6 +2,9 @@
 source $(dirname $0)/../install-lib.sh
 
 mod_enable vim ycm.vim
+cd $DOTFILES_DIR
+git submodule init
+git submodule update
 if ! [ -e ~/.at-google ]; then
-    safe_symlink "$DOTFILES_DIR/vim/.ycm_extra_conf.py" ~/.ycm_extra_conf.py
+    safe_symlink "$DOTFILES_DIR/lib/easyycm/.ycm_extra_conf.py" ~/.ycm_extra_conf.py
 fi
