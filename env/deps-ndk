@@ -1,0 +1,11 @@
+. shlib-deps
+
+CXX=$NDK_DEFAULT_TOOLCHAIN/g++
+
+CXX_STDINCLUDE=$NDKROOT/sources/cxx-stl/gnu-libstdc++/4.8/include
+CXX_STDBITINCLUDE=$NDKROOT/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi/include
+ANDROID_INCLUDE=$NDKROOT/platforms/android-19/arch-arm/usr/include
+
+CXXSYSINCLUDES=$CXX_STDINCLUDE:$CXX_STDBITINCLUDE:$ANDROID_INCLUDE
+CFLAGS=-DANDROID
+CXXFLAGS=-DANDROID
