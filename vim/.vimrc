@@ -37,7 +37,7 @@ nnoremap ,bp :call CurDirOpenConque('python') <CR>
 
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
-let g:session_autosave = 'no'
+let g:session_autosave = 'yes'
 
 " requred by Vundle
 filetype plugin indent on

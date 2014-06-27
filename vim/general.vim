@@ -194,5 +194,8 @@ autocmd BufNewFile,BufRead *.plt,*.gnuplot,*.gp setf gnuplot
 " The greatest imap in the world
 imap jj <Esc>
 
+noremap <leader>p :cp<CR>zv
+noremap <leader>n :cn<CR>zv
+
 set hidden
 endif "has("autocmd")
