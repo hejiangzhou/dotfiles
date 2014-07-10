@@ -183,6 +183,7 @@ autocmd Filetype c,cc,cpp,cxx,h,C,py,sh,f,f90,go,md
 \ set foldenable |
 \ set foldmethod=syntax |
 \ set textwidth=80 |
+\ set iskeyword=48-57,A-Z,a-z,_ |
 \ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>
 " 设置taglist 窗口，方便理解程序结构哦~
 autocmd Filetype c,cc,cpp,cxx,h,py,sh,f,f90 map <silent> <F9> :TlistToggle<cr>
