@@ -1,6 +1,4 @@
-if g:at_google
-    Glug youcompleteme-google
-else
+if !g:at_google
     Plugin 'Valloric/YouCompleteMe'
 endif
 
