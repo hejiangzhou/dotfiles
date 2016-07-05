@@ -1,0 +1,24 @@
+#!/bin/bash -e
+SOURCE=$1
+TARGET=$2
+if [ -z "${SOURCE}" ] || [ -z "${TARGET}" ] || [ "$#" -le 2 ]; then
+  echo "Usage: $(basename "$0") source_identifier target_identifier files..."
+  exit 1
+fi
+shift 2
+
+if ! grep --color=auto -nH "\<${SOURCE}\>" "$@"; then
+  echo "Identifier not found."
+  exit 1
+fi
+
+echo
+read -p "Replace all \"$SOURCE\" by \"$TARGET\"? (press 'Y' to preceed) " -n 1 -r
+echo
+
+if [ "${REPLY}" == "Y" ] || [ "${REPLY}" == "y" ]; then
+  sed -i "s/\<${SOURCE}\>/${TARGET}/g" "$@"
+  echo "Done"
+else
+  echo "Cancelled"
+fi

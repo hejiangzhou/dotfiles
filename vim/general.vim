@@ -102,11 +102,6 @@ set backspace=2
 " 允许backspace和光标键跨越行边界
 set whichwrap+=<,>,h,l
 
-" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
-set mouse=a
-" set selection=exclusive
-set selectmode=mouse,key
-
 " 启动的时候不显示那个援助索马里儿童的提示
 set shortmess=atI
 
