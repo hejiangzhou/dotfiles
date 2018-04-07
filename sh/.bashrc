@@ -3,10 +3,22 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
+trailing-space()
+{
+  sed 's/.$/\0 /'
+}
+
 show-git-branch()
 {
     RET=$?
-    git branch 2> /dev/null | sed '/^[^*]/d; s/^\*//'
+    git branch 2> /dev/null | sed '/^[^*]/d; s/^\* //' | trailing-space
+    return $RET
+}
+
+show-hg-identify()
+{
+    RET=$?
+    hg identify -Bt 2> /dev/null | trailing-space
     return $RET
 }
 
@@ -61,9 +73,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" == yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;35m\]$(show-git-branch) \[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
+    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;35m\] $(show-git-branch)$(show-hg-identify)\[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
 else
-    PS1='\u@\h \w$(show-git-branch) \$ '
+    PS1='\u@\h \w $(show-git-branch)$(show-hg-identify)\$ '
 fi
 unset color_prompt force_color_prompt
 
