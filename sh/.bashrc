@@ -15,13 +15,6 @@ show-git-branch()
     return $RET
 }
 
-show-hg-identify()
-{
-    RET=$?
-    hg identify -Bt 2> /dev/null | trailing-space
-    return $RET
-}
-
 export OS_TYPE=$(uname -s | sed 's/^\([[:alnum:]]*\)\(.*\)/\1/')
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -73,9 +66,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" == yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;35m\] $(show-git-branch)$(show-hg-identify)\[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
+    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;35m\] $(show-git-branch)\[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
 else
-    PS1='\u@\h \w $(show-git-branch)$(show-hg-identify)\$ '
+    PS1='\u@\h \w $(show-git-branch)\$ '
 fi
 unset color_prompt force_color_prompt
 
